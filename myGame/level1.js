@@ -270,6 +270,14 @@ this.player.body.setSize(this.player.width * 0.5, this.player.height * 0.5)
                 this.scene.start("level2",{playerPos: playerPos});
      }
 
+     level4(player, tile) {
+      console.log("level4 function");
+      let playerPos = {};
+      playerPos.x = 817
+      playerPos.y = 900
+          this.scene.start("level4",{playerPos: playerPos});
+}
+
     //  level4(player, tile) {
     //   console.log("level4 function");
     //   let playerPos = {};

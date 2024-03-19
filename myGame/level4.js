@@ -189,9 +189,30 @@ this.cursors = this.input.keyboard.createCursorKeys();
           this.player.anims.stop();
       }
 
+      if (
+        this.player.y > 332 &&
+        this.player.x > 468 &&
+        this.player.x < 508
+      ) {
+        console.log("level4");
+        this.level1();
+      }
+
+    }
+
+ level1(player, tile) {
+  console.log("level1 function");
+  let playerPos = {};
+  playerPos.x = 817
+  playerPos.y = 900
+      this.scene.start("level1",{playerPos: playerPos});
+ } 
+
+
+
        
 
-    } // end of update // 
+     // end of update // 
     
 
   }
