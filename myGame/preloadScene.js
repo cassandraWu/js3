@@ -3,9 +3,7 @@ class preloadScene extends Phaser.Scene {
     super({ key: "preloadScene" });
   }
 
-  preload(){
-    this.load.audio("bgMusic","assets/bgMusic.mp3")
-    }
+ 
 
   create() {
     spaceDown.on(

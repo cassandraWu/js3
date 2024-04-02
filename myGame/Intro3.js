@@ -26,7 +26,7 @@ this.music.play();
       let playerPos = {};
       playerPos.x = 797
       playerPos.y = 1218
-          this.scene.start("level1",{playerPos: playerPos});
+          this.scene.start("level3",{playerPos: playerPos});
           }, this );
           }
         }

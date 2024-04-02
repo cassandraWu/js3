@@ -23,6 +23,9 @@ this.music.play();
   spaceDown.on('down', () => {
       console.log("Spacebar pressed, go to next menu");
       this.scene.stop("deadScene");
+      let playerPos = {};
+      playerPos.x = 384;
+      playerPos.y = 1109;
       this.scene.start("level1");
   });
 }

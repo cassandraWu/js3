@@ -7,10 +7,16 @@ let config = {
         default: 'arcade',
         arcade: {
             debug: false
-        }
+        },
+
+        scale: {
+            mode: Phaser.Scale.FIT,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
+    
     },
     backgroundColor: '#000000',
-    scene: [Intro1, Intro2, Intro3, level1, level2, level3, level4, deadScene, winScene, freechoc]
+    scene: [Intro1, Intro2, Intro3, level1, level2, level3, level4, deadScene, winScene, freechoc, freechoc2]
 
 };
 

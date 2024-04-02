@@ -6,7 +6,7 @@ class Intro1 extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('Image1', 'assets/Intropage.jpg')
+    this.load.image('Image1', 'assets/Intropage.png')
       this.load.audio("bgMusic","assets/bgMusic.mp3")
       this.load.audio("turn","assets/page.mp3")
       

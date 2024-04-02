@@ -170,7 +170,7 @@ this.music.play();
     x: 50,
     flipX: false,
     yoyo: true,
-    duration: 4000,
+    duration: 5000,
     repeat: -1,
     onYoyo: () => {
         console.log("onYoyo");
@@ -187,7 +187,7 @@ this.tweens.add({
   x: 450,
   flipX: false,
   yoyo: true,
-  duration: 2000,
+  duration: 4000,
   repeat: -1,
   onYoyo: () => {
       console.log("onYoyo");
@@ -204,7 +204,7 @@ this.tweens.add({
   x: 250,
   flipX: false,
   yoyo: true,
-  duration: 3000,
+  duration: 6000,
   repeat: -1,
   onYoyo: () => {
       console.log("onYoyo");

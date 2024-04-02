@@ -20,6 +20,8 @@ class level3 extends Phaser.Scene {
       frameWidth: 64,
       frameHeight: 64,
     });
+
+    //mp3
     this.load.audio("collect","assets/collect.mp3")
   
 
@@ -68,10 +70,7 @@ class level3 extends Phaser.Scene {
     this.deco3Layer = map.createLayer("deco3", tilesArray, 0, 0);
     this.deco4Layer = map.createLayer("deco4", tilesArray, 0, 0);
 
-    
-    this.music = this.sound.add("collect",{loop: false}).setVolume(0.5);
-    this.music.play();
-   
+
 this.anims.create({
       key: "Wonka-up",
       frames: this.anims.generateFrameNumbers("Wonka", {
@@ -184,9 +183,9 @@ this.anims.create({
       .setScale(1.5)
       .play("choc1Anim");
 
-    this.physics.add.overlap(this.player, this.c1, this.hitItem, null, this);
+    this.physics.add.overlap(this.player, this.c1, this.hitWin, null, this);
     this.physics.add.overlap(this.player, this.c2, this.hitItem, null, this);
-    this.physics.add.overlap(this.player, this.c3, this.hitWin, null, this);
+    this.physics.add.overlap(this.player, this.c3, this.hitItem, null, this);
     this.physics.add.overlap(this.player, this.c4, this.hitItem, null, this);
 
      // Enemy Object Layer
@@ -334,7 +333,11 @@ this.anims.create({
 
     this.deco4Layer.setCollisionByExclusion(-1, true);
     this.physics.add.collider(this.player, this.deco4Layer);
+
+    this.collect= this.sound.add("collect").setVolume(1)
+
   } // end of create //
+
 
   update() {
     if (this.cursors.left.isDown) {
@@ -376,6 +379,7 @@ this.anims.create({
   hitItem(player, Item) {
     console.log("Hit Choc!!!");
     // this.cameras.main.shake(200);
+    this.collect.play()
     Item.disableBody(true, true);
     return false;
     
@@ -386,7 +390,7 @@ this.anims.create({
     console.log("Hit free!!!");
     // this.cameras.main.shake(200);
     Win.disableBody(true, true);
-    this.scene.start("freechoc")
+    this.scene.start("freechoc2")
     return false;
   }
 

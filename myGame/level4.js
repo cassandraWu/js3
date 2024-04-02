@@ -20,6 +20,7 @@ class level4 extends Phaser.Scene {
         });
         this.load.audio("door","assets/door.mp3")
         this.load.audio("walk","assets/walk.mp3")
+        this.load.audio("collect","assets/collect.mp3")
 
         // Step 2 : Preload any images here
         this.load.image("choco2img" , "assets/choco2.png");
@@ -298,6 +299,8 @@ this.cursors = this.input.keyboard.createCursorKeys();
      this.deco5Layer.setCollisionByExclusion(-1, true);
      this.physics.add.collider(this.player, this.deco5Layer);
 
+     this.collect= this.sound.add("collect").setVolume(1)
+
     } // end of create //
 
     update () {
@@ -347,6 +350,7 @@ this.cursors = this.input.keyboard.createCursorKeys();
   console.log("Hit Choc!!!");
   // this.cameras.main.shake(200);
   Item.disableBody(true, true);
+  this.collect.play()
   return false;
 }
 hitWin(player, Win) {
