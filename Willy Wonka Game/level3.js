@@ -20,7 +20,8 @@ class level3 extends Phaser.Scene {
       frameWidth: 64,
       frameHeight: 64,
     });
-    // this.load.audio("collect","assets/collect.mp3")
+    this.load.audio("collect","assets/collect.mp3")
+  
 
     // Step 2 : Preload any images here
     this.load.image("1_Generic_32x32img", "assets/1_Generic_32x32.png");
@@ -68,7 +69,8 @@ class level3 extends Phaser.Scene {
     this.deco4Layer = map.createLayer("deco4", tilesArray, 0, 0);
 
     
-
+    this.music = this.sound.add("collect",{loop: false}).setVolume(0.5);
+    this.music.play();
    
 this.anims.create({
       key: "Wonka-up",
@@ -184,7 +186,7 @@ this.anims.create({
 
     this.physics.add.overlap(this.player, this.c1, this.hitItem, null, this);
     this.physics.add.overlap(this.player, this.c2, this.hitItem, null, this);
-    this.physics.add.overlap(this.player, this.c3, this.hitItem, null, this);
+    this.physics.add.overlap(this.player, this.c3, this.hitWin, null, this);
     this.physics.add.overlap(this.player, this.c4, this.hitItem, null, this);
 
      // Enemy Object Layer
@@ -375,9 +377,20 @@ this.anims.create({
     console.log("Hit Choc!!!");
     // this.cameras.main.shake(200);
     Item.disableBody(true, true);
-    this.scene.start("winScene")
+    return false;
+    
+   
+  }
+
+  hitWin(player, Win) {
+    console.log("Hit free!!!");
+    // this.cameras.main.shake(200);
+    Win.disableBody(true, true);
+    this.scene.start("freechoc")
     return false;
   }
+
+  
    //disable enemy
  hitEnemy(player, e1) {
   console.log("hitEnemy");

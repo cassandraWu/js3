@@ -10,7 +10,7 @@ let config = {
         }
     },
     backgroundColor: '#000000',
-    scene: [Intro1, Intro2, Intro3, level1, level2, level3, level4, deadScene, winScene]
+    scene: [Intro1, Intro2, Intro3, level1, level2, level3, level4, deadScene, winScene, freechoc]
 
 };
 

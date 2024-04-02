@@ -165,77 +165,77 @@ class level2 extends Phaser.Scene {
     // this.physics.add.overlap(this.player, this.choc3, this.hitItem, null, this);
 
     //enemy layer
-    let oompa1 = map.findObject("enemyLayer", (obj) => obj.name === "oompa1");
-    let oompa2 = map.findObject("enemyLayer", (obj) => obj.name === "oompa2");
-    let oompa3 = map.findObject("enemyLayer", (obj) => obj.name === "oompa3");
+//     let oompa1 = map.findObject("enemyLayer", (obj) => obj.name === "oompa1");
+//     let oompa2 = map.findObject("enemyLayer", (obj) => obj.name === "oompa2");
+//     let oompa3 = map.findObject("enemyLayer", (obj) => obj.name === "oompa3");
 
 
-    this.oompa1 = this.physics.add
-      .sprite(oompa1.x, oompa1.y, "e1spritesheet").play("oompa-up");
-      this.oompa2 = this.physics.add
-      .sprite(oompa2.x, oompa2.y, "e1spritesheet").play("oompa-up");
-      this.oompa3 = this.physics.add
-      .sprite(oompa3.x, oompa3.y, "e1spritesheet").play("oompa-up");
+//     this.oompa1 = this.physics.add
+//       .sprite(oompa1.x, oompa1.y, "e1spritesheet").play("oompa-up");
+//       this.oompa2 = this.physics.add
+//       .sprite(oompa2.x, oompa2.y, "e1spritesheet").play("oompa-up");
+//       this.oompa3 = this.physics.add
+//       .sprite(oompa3.x, oompa3.y, "e1spritesheet").play("oompa-up");
       
-    this.oompa1.body.setSize(this.player.width * 0.5, this.player.height * 0.5)
+//     this.oompa1.body.setSize(this.player.width * 0.5, this.player.height * 0.5)
       
 
-    this.physics.add.overlap(this.player, this.oompa1, this.hitEnemy, null, this);
-    this.physics.add.overlap(this.player, this.oompa2, this.hitEnemy, null, this);
-    this.physics.add.overlap(this.player, this.oompa3, this.hitEnemy, null, this);
+//     this.physics.add.overlap(this.player, this.oompa1, this.hitEnemy, null, this);
+//     this.physics.add.overlap(this.player, this.oompa2, this.hitEnemy, null, this);
+//     this.physics.add.overlap(this.player, this.oompa3, this.hitEnemy, null, this);
 
-     // in create, add tweens  
-   this.tweens.add({
-    targets: this.oompa1,
-    y: 250,
-    flipY: false,
-    yoyo: true,
-    duration: 1000,
-    repeat: -1,
-    onYoyo: () => {
-        console.log("onYoyo");
-        this.oompa1.play("oompa-down");
-    },
-    onRepeat: () => {
-        console.log("onRepeat");
-        this.oompa1.play("oompa-up");
-    }
+//      // in create, add tweens  
+//    this.tweens.add({
+//     targets: this.oompa1,
+//     y: 250,
+//     flipY: false,
+//     yoyo: true,
+//     duration: 1000,
+//     repeat: -1,
+//     onYoyo: () => {
+//         console.log("onYoyo");
+//         this.oompa1.play("oompa-down");
+//     },
+//     onRepeat: () => {
+//         console.log("onRepeat");
+//         this.oompa1.play("oompa-up");
+//     }
 
-});
+// });
 
-this.tweens.add({
-  targets: this.oompa2,
-  y: 250,
-  flipY: false,
-  yoyo: true,
-  duration: 1000,
-  repeat: -1,
-  onYoyo: () => {
-      console.log("onYoyo");
-      this.oompa2.play("oompa-up");
-  },
-  onRepeat: () => {
-      console.log("onRepeat");
-      this.oompa2.play("oompa-down");
-  }
-});
+// this.tweens.add({
+//   targets: this.oompa2,
+//   y: 250,
+//   flipY: false,
+//   yoyo: true,
+//   duration: 1000,
+//   repeat: -1,
+//   onYoyo: () => {
+//       console.log("onYoyo");
+//       this.oompa2.play("oompa-up");
+//   },
+//   onRepeat: () => {
+//       console.log("onRepeat");
+//       this.oompa2.play("oompa-down");
+//   }
+// });
 
-this.tweens.add({
- targets: this.oompa3,
- y: 250,
- flipY: false,
- yoyo: true,
- duration: 1000,
- repeat: -1,
- onYoyo: () => {
-     console.log("onYoyo");
-     this.oompa3.play("oompa-up");
- },
- onRepeat: () => {
-     console.log("onRepeat");
-     this.oompa3.play("oompa-down");
- }
-});
+// this.tweens.add({
+//  targets: this.oompa3,
+//  y: 250,
+//  flipY: false,
+//  yoyo: true,
+//  duration: 1000,
+//  repeat: -1,
+//  onYoyo: () => {
+//      console.log("onYoyo");
+//      this.oompa3.play("oompa-up");
+//  },
+//  onRepeat: () => {
+//      console.log("onRepeat");
+//      this.oompa3.play("oompa-down");
+//  }
+// });
 
     //Jump to levels
     var level1Down = this.input.keyboard.addKey(49);
@@ -333,14 +333,14 @@ this.tweens.add({
   }
 
   //disable enemy
-  hitEnemy(player, oompa1) {
-    console.log("hitEnemy");
-    // this.hitSnd.play();
-    this.cameras.main.shake(200); // 500ms
-    //(player knockback) player.x = player.x - 50
-    oompa1.disableBody(true, true);
-    return false;
-  }
+  // hitEnemy(player, oompa1) {
+  //   console.log("hitEnemy");
+  //   // this.hitSnd.play();
+  //   this.cameras.main.shake(200); // 500ms
+  //   //(player knockback) player.x = player.x - 50
+  //   oompa1.disableBody(true, true);
+  //   return false;
+  // }
 
   // hitItem(player, Item) {
   //   console.log("Hit Choc!!!");

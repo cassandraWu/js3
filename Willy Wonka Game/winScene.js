@@ -23,7 +23,7 @@ this.music.play();
   spaceDown.on('down', () => {
       console.log("Spacebar pressed, go to next menu");
       this.scene.stop("winScene");
-      this.scene.start("level1");
+      this.scene.start("Intro1");
   });
 }
 

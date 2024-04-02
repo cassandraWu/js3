@@ -168,7 +168,7 @@ this.music.play();
       .setScale(1.5)
       .play("choc1Anim");
 
-    this.physics.add.overlap(this.player, this.c1, this.hitItem, null, this);
+    this.physics.add.overlap(this.player, this.c1, this.hitWin, null, this);
     this.physics.add.overlap(this.player, this.c2, this.hitItem, null, this);
     this.physics.add.overlap(this.player, this.c3, this.hitItem, null, this);
     this.physics.add.overlap(this.player, this.c4, this.hitItem, null, this);
@@ -347,6 +347,12 @@ this.cursors = this.input.keyboard.createCursorKeys();
   console.log("Hit Choc!!!");
   // this.cameras.main.shake(200);
   Item.disableBody(true, true);
+  return false;
+}
+hitWin(player, Win) {
+  console.log("Hit Win!!!");
+  // this.cameras.main.shake(200);
+  Win.disableBody(true, true);
   this.scene.start("winScene")
   return false;
 }
