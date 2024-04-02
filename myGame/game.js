@@ -6,11 +6,11 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true
+            debug: false
         }
     },
     backgroundColor: '#000000',
-    scene: [preloadScene, Intro1, Intro2, Intro3, level1, level2, level3, level4]
+    scene: [Intro1, Intro2, Intro3, level1, level2, level3, level4, deadScene, winScene, freechoc]
 
 };
 
